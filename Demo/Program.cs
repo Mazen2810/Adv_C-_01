@@ -56,6 +56,28 @@
             ///  else
             ///      Console.WriteLine("!Equals"); 
             #endregion
+
+
+            #region Equality (== & Equals) & GetHashCode
+            // Employee E01 = new Employee() { Id = 10, Name = "Ahmed", Salary = 5_000 };
+            // Employee E02 = new Employee() { Id = 10, Name = "Ahmed", Salary = 5_000 };
+
+            //// Console.WriteLine($"E01.GetHashCode() : {E01.GetHashCode()}");
+            //// Console.WriteLine($"E02.GetHashCode() : {E02.GetHashCode()}");
+
+            // ///if (E01.Equals(E02))
+            // ///    //if(E01 == E02)
+            // ///    Console.WriteLine("Equals");
+            // ///else
+            // ///    Console.WriteLine("!Equals");
+
+            // HashSet<Employee> employees = new HashSet<Employee>();
+            // employees.Add(E01);
+            // employees.Add(E02);
+
+            // foreach (Employee emp in employees)
+            //     Console.WriteLine(emp); 
+            #endregion
         }
     }
 }
