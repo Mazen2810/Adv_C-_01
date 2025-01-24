@@ -6,18 +6,25 @@ using System.Threading.Tasks;
 
 namespace Demo
 {
-    internal class Employee
+    internal class Employee : IEquatable<Employee>
     {
         public int Id { get; set; }
         public string? Name { get; set; }
         public decimal Salary { get; set; }
 
-        public override bool Equals(object? obj) /*obj = new Employee() { Id = 10, Name = "Ahmed", Salary = 5_000 };*/
-        {
-            // Employee? other = (Employee) obj; // unsafe Casting: Compiler can't enforce type safety[May throw an Exception]
-            Employee? other = obj as Employee; // if failed it returns null
+       /// public override bool Equals(object? obj) /*obj = new Employee() { Id = 10, Name = "Ahmed", Salary = 5_000 };*/
+       /// {
+       ///     // Employee? other = (Employee) obj; // unsafe Casting: Compiler can't enforce type safety[May throw an Exception]
+       ///     Employee? other = obj as Employee; // if failed it returns null
+       ///
+       ///     if (other == null) return false;
+       ///     return (this.Id == other.Id) && (this.Name == other.Name) && (this.Salary == other.Salary);
+       ///
+       /// }
 
-            if (other == null) return false;
+        public bool Equals(Employee? other)
+        {
+            if(other is null) return false;
             return (this.Id == other.Id) && (this.Name == other.Name) && (this.Salary == other.Salary);
 
         }
