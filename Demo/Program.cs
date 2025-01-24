@@ -29,6 +29,33 @@
             /// Console.WriteLine($"P02 = {P02}"); 
             #endregion
 
+
+            #region Generics - LinearSearch Example 02
+            /// int[] Numbers = [10, 2, 32, 3, 12, 34, 11, 33];
+            ///
+            /// int result = Helper.LinearSearch(Numbers, 11);
+            /// Console.WriteLine($"index = {result}");
+
+            /// Employee[] employees =
+            /// {
+            ///     new Employee(){Id = 10 , Name = "Ahmed",   Salary = 8_000},
+            ///     new Employee(){Id = 20 , Name = "Mohamed", Salary = 3_000},
+            ///     new Employee(){Id = 30 , Name = "Omnia",   Salary = 2_000},
+            ///     new Employee(){Id = 40 , Name = "Mazen",   Salary = 7_000},
+            /// };
+            ///
+            /// int index = Helper<Employee>.LinearSearch(employees, new Employee() { Id = 40, Name = "Mazen", Salary = 7_000 });
+            /// Console.WriteLine($"Index: {index}");
+
+            ///  Employee E01 = new Employee() { Id = 10, Name = "Ahmed", Salary = 5_000 };
+            ///  Employee E02 = new Employee() { Id = 10, Name = "Ahmed", Salary = 5_000 };
+            ///
+            ///  if (E01.Equals(E02))
+            ///  //if(E01 == E02)
+            ///      Console.WriteLine("Equals");
+            ///  else
+            ///      Console.WriteLine("!Equals"); 
+            #endregion
         }
     }
 }

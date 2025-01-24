@@ -6,9 +6,22 @@ using System.Threading.Tasks;
 
 namespace Demo
 {
-    internal static class Helper
+    internal static class Helper<T>
     {
-        public static void SWAP<T>(ref T X , ref T Y)
+        public static int LinearSearch(T[] Arr, T Value)
+        {
+            if(Arr?.Length > 0 && Value is not null)
+            {
+                for(int i = 0; i < Arr.Length; i++)
+                {
+                    if (Value.Equals(Arr[i]))
+                        return i;
+                }
+            }
+            return -1;
+        }
+
+        public static void SWAP(ref T X , ref T Y)
         {
             Console.WriteLine("******* SWAP *******");
             T Temp = X;
