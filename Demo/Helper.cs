@@ -6,8 +6,44 @@ using System.Threading.Tasks;
 
 namespace Demo
 {
-    internal static class Helper<T>
+    internal static class Helper<T> where T : IComparable<T>
     {
+
+        public static void BubbleSort(T[] Arr)
+        {
+            if (Arr is null || Arr.Length == 0)  return;
+
+            for (int i = 0; i < Arr.Length; i++)
+            {
+                for (int j = 0;j < Arr.Length -1 -i ;j++)
+                {
+                    if (Arr[j].CompareTo(Arr[j+1]) == 1)
+                        SWAP(ref Arr[j] , ref Arr[j+1]);
+                            
+
+                }
+            }
+
+        }
+
+        public static void BubbleSort(T[] Arr , IComparer<T> comparer)
+        {
+            if (Arr is null || Arr.Length == 0) return;
+
+            for (int i = 0; i < Arr.Length; i++)
+            {
+                for (int j = 0; j < Arr.Length - 1 - i; j++)
+                {
+                    if (comparer.Compare(Arr[j] , Arr[j+1]) == 1)
+                        SWAP(ref Arr[j], ref Arr[j+1]);
+
+
+
+                }
+            }
+
+        }
+
         public static int LinearSearch(T[] Arr, T Value)
         {
             if(Arr?.Length > 0 && Value is not null)
@@ -54,7 +90,7 @@ namespace Demo
 
         public static void SWAP(ref T X , ref T Y)
         {
-            Console.WriteLine("******* SWAP *******");
+            //Console.WriteLine("******* SWAP *******");
             T Temp = X;
             X = Y;
             Y=Temp;

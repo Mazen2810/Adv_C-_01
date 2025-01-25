@@ -83,6 +83,25 @@
             #endregion
 
 
+            #region Generics - Sort Example 03
+            /// Employee[] employees =
+            ///  {
+            ///      new Employee(){Id = 10 , Name = "Ahmed",   Salary = 8_000},
+            ///      new Employee(){Id = 20 , Name = "Mohamed", Salary = 3_000},
+            ///      new Employee(){Id = 30 , Name = "Omnia",   Salary = 2_000},
+            ///      new Employee(){Id = 40 , Name = "Mazen",   Salary = 7_000},
+            ///  };
+            ///
+            ///// Helper<Employee>.BubbleSort(employees);
+            /// //Helper<Employee>.BubbleSort(employees , new EmployeeComparerById());
+            /// Helper<Employee>.BubbleSort(employees , new EmployeeComparerByName());
+            ///
+            /// foreach (Employee employee in employees) 
+            ///
+            ///     {
+            ///     Console.WriteLine(employee);
+            ///     } 
+            #endregion
 
         }
     }

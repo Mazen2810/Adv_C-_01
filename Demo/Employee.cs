@@ -32,25 +32,58 @@ namespace Demo
             return HashCode.Combine(obj.Name);
         }
     }
-    internal class Employee : IEquatable<Employee>
+
+    internal class EmployeeComparerById : IComparer<Employee>
+    {
+        public int Compare(Employee? x, Employee? y)
+        {
+            return x?.Id.CompareTo(y?.Id ?? 0) ?? -1;
+        }
+    }
+
+    internal class EmployeeComparerByName : IComparer<Employee>
+    {
+        public int Compare(Employee? x, Employee? y)
+        {
+            return x?.Name?.CompareTo(y?.Name) ?? (y is null ? 0 : -1);
+        }
+    }
+    internal class Employee : IEquatable<Employee> , IComparable<Employee>
     {
         public int Id { get; set; }
         public string? Name { get; set; }
         public decimal Salary { get; set; }
 
-       /// public override bool Equals(object? obj) /*obj = new Employee() { Id = 10, Name = "Ahmed", Salary = 5_000 };*/
-       /// {
-       ///     // Employee? other = (Employee) obj; // unsafe Casting: Compiler can't enforce type safety[May throw an Exception]
-       ///     Employee? other = obj as Employee; // if failed it returns null
-       ///
-       ///     if (other == null) return false;
-       ///     return (this.Id == other.Id) && (this.Name == other.Name) && (this.Salary == other.Salary);
-       ///
-       /// }
+        public int CompareTo(Employee? other)
+        {
+            if (other == null) return 1;
+            return this.Salary.CompareTo(other.Salary); // Compare to will use the generic 
+
+            //return this.Salary.CompareTo(other?.Salary); // compare to will use the object
+
+            /// if (other == null) return 1;
+            /// if (this.Salary > other.Salary) return 1;
+            /// else if (this.Salary < other.Salary) return -1;
+            /// return 0;
+        }
+
+        
+
+        /// public override bool Equals(object? obj) /*obj = new Employee() { Id = 10, Name = "Ahmed", Salary = 5_000 };*/
+        /// {
+        ///     // Employee? other = (Employee) obj; // unsafe Casting: Compiler can't enforce type safety[May throw an Exception]
+        ///     Employee? other = obj as Employee; // if failed it returns null
+        ///
+        ///     if (other == null) return false;
+        ///     return (this.Id == other.Id) && (this.Name == other.Name) && (this.Salary == other.Salary);
+        ///
+        /// }
+
+        #region Object Methods
 
         public bool Equals(Employee? other)
         {
-            if(other is null) return false;
+            if (other is null) return false;
             return (this.Id == other.Id) && (this.Name == other.Name) && (this.Salary == other.Salary);
 
         }
@@ -78,6 +111,7 @@ namespace Demo
         public override string ToString()
         {
             return $"Id : {Id} , Name : {Name}, Salary: {Salary}";
-        }
+        } 
+        #endregion
     }
 }
