@@ -44,8 +44,12 @@
             ///     new Employee(){Id = 40 , Name = "Mazen",   Salary = 7_000},
             /// };
             ///
-            /// int index = Helper<Employee>.LinearSearch(employees, new Employee() { Id = 40, Name = "Mazen", Salary = 7_000 });
-            /// Console.WriteLine($"Index: {index}");
+            /// // int index = Helper<Employee>.LinearSearch(employees, new Employee() { Id = 40 , Name = "Mazen" } , new EmployeeEqualityComparerByName());
+            /// // Console.WriteLine($"Index: {index}");
+            ///
+            /// int index = Helper<Employee>.LinearSearch(employees, new Employee() { Id = 40, Name = "Mazen" }, 
+            ///     delegate (Employee X, Employee Y) { return X.Name == Y.Name; });
+            ///  Console.WriteLine($"Index: {index}");
 
             ///  Employee E01 = new Employee() { Id = 10, Name = "Ahmed", Salary = 5_000 };
             ///  Employee E02 = new Employee() { Id = 10, Name = "Ahmed", Salary = 5_000 };
@@ -55,8 +59,6 @@
             ///      Console.WriteLine("Equals");
             ///  else
             ///      Console.WriteLine("!Equals"); 
-            #endregion
-
 
             #region Equality (== & Equals) & GetHashCode
             // Employee E01 = new Employee() { Id = 10, Name = "Ahmed", Salary = 5_000 };
@@ -78,6 +80,10 @@
             // foreach (Employee emp in employees)
             //     Console.WriteLine(emp); 
             #endregion
+            #endregion
+
+
+
         }
     }
 }
