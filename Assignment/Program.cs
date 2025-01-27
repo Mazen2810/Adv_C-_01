@@ -1,6 +1,7 @@
 ﻿
 using Assignment.Q2;
 using Assignment.Q3;
+using Assignment.Q5;
 
 namespace Assignment
 {
@@ -55,18 +56,49 @@ namespace Assignment
 
             #region Q4: You are given a list of integers. Your task is to find and return a new list containing only the even numbers from the given list.
 
-           // List<int> Numbers = new List<int>() { 1,2,3,4,5,6,7,8,9,10};
-           // List<int> EvenNumbers = new List<int>();
-           //
-           // for(int i = 0; i < Numbers.Count; i++)
-           // {
-           //     if (Numbers[i] % 2 == 0)
-           //         EvenNumbers.Add(Numbers[i]);
-           // }
-           //
-           // foreach(int even in EvenNumbers)
-           //     Console.WriteLine(even);
+            // List<int> Numbers = new List<int>() { 1,2,3,4,5,6,7,8,9,10};
+            // List<int> EvenNumbers = new List<int>();
+            //
+            // for(int i = 0; i < Numbers.Count; i++)
+            // {
+            //     if (Numbers[i] % 2 == 0)
+            //         EvenNumbers.Add(Numbers[i]);
+            // }
+            //
+            // foreach(int even in EvenNumbers)
+            //     Console.WriteLine(even);
             #endregion
+
+
+            #region Q5: implement a custom list called FixedSizeList<T> 
+
+            //FixedSizeList<int> fixedList = new FixedSizeList<int>(4);
+            //fixedList.Add(1);
+            //fixedList.Add(2);
+            //fixedList.Add(3);
+            //fixedList.Add(4);
+            // Console.WriteLine("**************** Before the Exceeded Exception ****************");
+            //
+            // foreach (int i in fixedList.List)
+            //     Console.WriteLine(i);
+            //
+            // Console.WriteLine("**************** After the Exceeded Exception ****************");
+            //
+            // fixedList.Add(5);
+
+
+            // Console.WriteLine("**************** Before the OutofRange Exception ****************");
+            // 
+            // int item = fixedList.Get(3);
+            // Console.WriteLine(item);
+            // 
+            // 
+            // Console.WriteLine("**************** After the OutofRange Exception ****************");
+            // 
+            // fixedList.Get(13); 
+            #endregion
+
+
 
         }
     }
