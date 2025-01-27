@@ -53,6 +53,21 @@ namespace Assignment
             ///     Console.WriteLine(name); 
             #endregion
 
+            #region Q4: You are given a list of integers. Your task is to find and return a new list containing only the even numbers from the given list.
+
+           // List<int> Numbers = new List<int>() { 1,2,3,4,5,6,7,8,9,10};
+           // List<int> EvenNumbers = new List<int>();
+           //
+           // for(int i = 0; i < Numbers.Count; i++)
+           // {
+           //     if (Numbers[i] % 2 == 0)
+           //         EvenNumbers.Add(Numbers[i]);
+           // }
+           //
+           // foreach(int even in EvenNumbers)
+           //     Console.WriteLine(even);
+            #endregion
+
         }
     }
 }
