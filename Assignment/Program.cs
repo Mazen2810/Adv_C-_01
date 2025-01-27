@@ -5,8 +5,32 @@ using Assignment.Q5;
 
 namespace Assignment
 {
+
     internal class Program
     {
+        static int FirstNonRepeatedCharacter(string input)
+        {
+            if (string.IsNullOrEmpty(input))
+                return -1;
+
+            Dictionary<char, int> charCount = new Dictionary<char, int>();
+
+            foreach (char c in input)
+            {
+                if (charCount.ContainsKey(c))
+                    charCount[c]++;
+                else
+                    charCount[c] = 1;
+            }
+
+            for (int i = 0; i < input.Length; i++)
+            {
+                if (charCount[input[i]] == 1)
+                    return i;
+            }
+
+            return -1;
+        }
         static void Main(string[] args)
         {
             #region Q1: Bubble Sort algorithm
@@ -99,7 +123,15 @@ namespace Assignment
             #endregion
 
 
+            #region Q6:Given a string, find the first non-repeated character in it and return its index. If there is no such character, return -1. Hint you can use dictionary
 
+
+            int Result = FirstNonRepeatedCharacter("MazenMohmaed");
+            if (Result != -1)
+                Console.WriteLine($"The first non-repeated character is at index: {Result}");
+            else
+                Console.WriteLine("No non-repeated character found.");
+            #endregion  
         }
     }
 }
